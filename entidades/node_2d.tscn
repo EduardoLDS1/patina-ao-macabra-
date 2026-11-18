@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqg0weuvu1dy2"]
+
+[ext_resource type="Script" uid="uid://b6h2oqkoldgrf" path="res://entidades/inimigo.gd" id="1_0o5vs"]
+[ext_resource type="Texture2D" uid="uid://cl4py3p6olh43" path="res://sprites/Espírito de Gelo Pixelado (1).png" id="2_2nldi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nldi"]
+custom_solver_bias = 0.5
+size = Vector2(10, 11)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="inimigo" type="CharacterBody2D" parent="." groups=["inimigo"]]
+light_mask = 5
+visibility_layer = 4
+collision_layer = 4
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_0o5vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inimigo"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_2nldi")
+
+[node name="Sprite2D" type="Sprite2D" parent="inimigo"]
+z_index = 1
+position = Vector2(-0.500001, 1.5)
+scale = Vector2(0.84375, 0.78125)
+texture = ExtResource("2_2nldi")

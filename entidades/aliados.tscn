@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cn4a8de02fwgi"]
+
+[ext_resource type="Script" uid="uid://hjk0nb2i0k3e" path="res://entidades/aliados.gd" id="1_npehi"]
+[ext_resource type="Texture2D" uid="uid://l7k1e7c48cx5" path="res://sprites/personagem.png" id="2_tg8nk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8f34p"]
+radius = 4.0
+height = 16.0
+
+[node name="Aliados" type="Area2D" unique_id=1816024899]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_npehi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=957993418]
+shape = SubResource("CapsuleShape2D_8f34p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2040868880]
+modulate = Color(0.0063168723, 0.23304552, 0.9709689, 1)
+texture = ExtResource("2_tg8nk")
+hframes = 4
+vframes = 4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
